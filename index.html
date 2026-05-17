@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCH STUDIO - Minimal Architecture &amp; Design</title>
+    <meta name="description" content="Award-winning architectural firm specializing in minimal design. Creating extraordinary spaces through thoughtful architecture, residential, commercial and renovation projects.">
+    <meta name="author" content="ARCH STUDIO" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="canonical" href="https://architect-portfolio-website.app/" />
+
+    <meta property="og:site_name" content="ARCH STUDIO" />
+    <meta property="og:title" content="ARCH STUDIO - Minimal Architecture & Design" />
+    <meta property="og:description" content="Award-winning architectural firm specializing in minimal design. Creating extraordinary spaces through thoughtful architecture." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://architect-portfolio-website.app/" />
+    <meta property="og:image" content="https://architect-portfolio-website.app/social-preview.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ARCH STUDIO - Minimal Architecture & Design" />
+    <meta name="twitter:description" content="Award-winning architectural firm specializing in minimal design. Creating extraordinary spaces through thoughtful architecture." />
+    <meta name="twitter:image" content="https://architect-portfolio-website.app/social-preview.svg" />
+
+    <!-- Anti-FOUC: apply the persisted/system theme before first paint so dark-OS
+         visitors don't see a flash of the light palette. Must run synchronously
+         in <head> ahead of the React bundle. Mirrors the storageKey used by
+         ThemeProvider in src/main.tsx ("architecture-theme"). -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('architecture-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var resolved =
+            stored === 'dark' || stored === 'light'
+              ? stored
+              : prefersDark
+              ? 'dark'
+              : 'light';
+          var root = document.documentElement;
+          root.classList.remove('light', 'dark');
+          root.classList.add(resolved);
+          root.style.colorScheme = resolved;
+        } catch (e) {
+          // localStorage / matchMedia unavailable - leave defaults in place
+        }
+      })();
+    </script>
+
+    <!-- Site-wide JSON-LD: Organization + WebSite. Per-route components
+         (e.g. BlogPosting on /blog/:id) inject additional schema at runtime. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://architect-portfolio-website.app/#organization",
+            "name": "ARCH STUDIO",
+            "url": "https://architect-portfolio-website.app/",
+            "description": "Award-winning architectural firm specializing in minimal design.",
+            "logo": "https://architect-portfolio-website.app/social-preview.svg",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "hello@archstudio.com",
+              "telephone": "+1-234-567-8900"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Design Avenue",
+              "addressLocality": "New York",
+              "addressRegion": "NY",
+              "postalCode": "10001",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://architect-portfolio-website.app/#website",
+            "url": "https://architect-portfolio-website.app/",
+            "name": "ARCH STUDIO",
+            "description": "Minimal architecture studio portfolio, services, and journal.",
+            "publisher": { "@id": "https://architect-portfolio-website.app/#organization" }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

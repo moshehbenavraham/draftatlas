@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ARCH STUDIO social preview</title>
+  <desc id="desc">Minimal black and white architecture studio social preview.</desc>
+  <rect width="1200" height="630" fill="#f7f4ef"/>
+  <rect x="70" y="70" width="1060" height="490" fill="#101010"/>
+  <path d="M140 480H520V150H910V480H1060" fill="none" stroke="#f7f4ef" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M220 480V250H430V480M610 480V250H820V480" fill="none" stroke="#c9b99a" stroke-width="12"/>
+  <text x="140" y="165" fill="#f7f4ef" font-family="Arial, Helvetica, sans-serif" font-size="54" letter-spacing="8">ARCH STUDIO</text>
+  <text x="140" y="540" fill="#c9b99a" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="5">MINIMAL ARCHITECTURE AND DESIGN</text>
+</svg>
